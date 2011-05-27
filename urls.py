@@ -7,4 +7,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
+    
+    url(r'^switch', 'views.switch_language', name = 'switch_language'),
+    url(r'^', include('posts.urls')),
 ) + staticfiles_urlpatterns()

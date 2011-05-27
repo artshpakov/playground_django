@@ -9,7 +9,8 @@
     <body>
         <div id="container">
             <header>
-                <a href="/" id="logo">PyBLOG</a>
+                <a href="{% url posts_list %}" id="logo">PyBLOG</a>
+                {% include "includes/langswitch.html" %}
             </header>
             
             <section id="content">
@@ -19,4 +20,13 @@
             </section
         </div>        
     </body>
+    
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            $("#global_language").change(function() {
+                $("#langform").submit();
+            })
+        })
+    </script>
 </html>

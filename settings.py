@@ -13,6 +13,12 @@ ROOT = os.path.dirname(__file__)
 
 TIME_ZONE = 'America/Chicago'
 LANGUAGE_CODE = 'en-us'
+LANGUAGES = (
+    ('en', 'English'),
+    ('ru', 'Russian'),
+)
+DEFAULT_LANGUAGE = LANGUAGE_CODE.split('-')[0]
+
 USE_I18N = True
 USE_L10N = True
 
@@ -68,6 +74,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.admin',
+    'posts',
 )
 
 LOGGING = {

@@ -1,0 +1,19 @@
+{% extends "basic.html" %}
+
+{% block content %}
+    {% for post in object_list %}
+        <article>
+            <h3><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h3>
+            <p>
+                <small>
+                    {{ post.post.author.username }} |
+                    {{ post.post.pub_date }} |
+                    {{ post.get_language_display|lower }}
+                </small>
+            </p>
+            {% autoescape off %}{{ post.teaser }}{% endautoescape %}
+        </article>
+    {% empty %}
+        <p>No posts yet</p>
+    {% endfor %}
+{% endblock %}
