@@ -1,14 +1,18 @@
 {% extends "basic.html" %}
+{% load get_translations from post_tags %}
 
-{% block content %}
+{% block content %}  
+    
     <h3>{{ postview.title }}</h3>
     <p>
         <small>
             {{ postview.post.author.username }} |
-            {{ postview.post.pub_date }} |
-            {{ postview.get_language_display|lower }}
+            {{ postview.post.pub_date }}
         </small>
     </p>
+    
+    {% get_translations postview %}
     {% autoescape off %}{{ postview }}{% endautoescape %}
+        
     <p>&larr; <a href="{% url posts_list %}">home</a></p>
 {% endblock %}

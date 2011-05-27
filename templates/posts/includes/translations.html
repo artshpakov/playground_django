@@ -1,0 +1,10 @@
+{% if routes %}
+    <aside class="translations">
+        <small>This post in other languages:</small><br/>
+        <ul style="margin-left: 20px;">
+            {% for lang, link in routes.items %}
+                <li><a href="{{ link }}">{{ lang }}</a></li>
+            {% endfor %}
+        </ul>
+    </aside>
+{% endif %}

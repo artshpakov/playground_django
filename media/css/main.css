@@ -56,3 +56,11 @@ section#content {
 article {
     margin-bottom: 2em;
 }
+
+aside {
+    float: right;
+    width: 230px;
+    padding: 15px; margin: 0 0 20px 12px;
+    background-color: #eee;
+    -webkit-border-radius: 12px;
+}

@@ -40,3 +40,11 @@ class PostView(models.Model):
 
     class Meta:
         ordering = ['-post__pub_date']
+
+    def get_translations(self):
+        views = PostView.objects.filter(post = self.post)
+        map = {}
+        for v in views:
+            if v.language != self.language:
+                map[v.get_language_display()] = v.get_absolute_url()
+        return map

@@ -1,5 +1,5 @@
 <form id="langform" style="float:right;" action="/switch">
-    <select name="language" id="global_language">
+    <select name="language" id="global_language" onchange="$('#langform').submit()">
         {% for language in LANGUAGES %}
             <option value="{{ language.0 }}"
                 {% if request.session.lang == language.0 %}
