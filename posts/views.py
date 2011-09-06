@@ -14,7 +14,7 @@ def posts_view(request, **kwargs):
     try:
         if set(('slug', 'language', 'year', 'month', 'day')).issubset(kwargs):
             postview = PostView.objects.find(kwargs)
-        else: raise ObjectDoesNotExist
+        else: raise Http404
     except ObjectDoesNotExist:
         raise Http404
     return render_to_response("posts/view.html", {'postview': postview}, RequestContext(request))
